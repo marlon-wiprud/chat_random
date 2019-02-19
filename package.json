@@ -1,0 +1,40 @@
+{
+  "name": "chat_random",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev-server": "webpack-dev-server --hot",
+    "ws-server": "node server/websocket-server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marlon-wiprud/chat_random.git"
+  },
+  "author": "Marlon Wiprud",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marlon-wiprud/chat_random/issues"
+  },
+  "homepage": "https://github.com/marlon-wiprud/chat_random#readme",
+  "dependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.0",
+    "nodemon": "^1.18.10",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.4",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.1.14",
+    "ws": "^6.1.4"
+  },
+  "devDependencies": {
+    "jest": "^24.1.0"
+  }
+}
