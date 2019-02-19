@@ -3,8 +3,6 @@ const WebSocket = require("ws");
 const lobby = [];
 
 function createRoom() {
-  console.log("MAKING ROOM");
-
   const user1 = lobby.pop();
   const user2 = lobby.pop();
   // set matches
@@ -21,7 +19,6 @@ function createRoom() {
     type: "MATCHED",
     payload: user1.username
   });
-  console.log("USER ONE: ", user1.username);
 
   user1.socket.match.send(user2Data);
   user2.socket.match.send(user1Data);
@@ -36,15 +33,12 @@ ws.on("connection", socket => {
   socket.on("message", data => {
     const { type, payload } = JSON.parse(data);
 
-    console.log("TYPE: ", type);
-
     switch (type) {
       case "JOIN_ROOM": {
         lobby.push({ socket, username: payload });
         if (lobby.length >= 2) {
           createRoom();
         }
-        console.log("USERS IN LOBBY: ", lobby.length);
 
         break;
       }
